@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= planet.title
+    hr
+    h5 Escrito por: #{planet.author}
+    hr
+    p= planet.body
+    hr
+    if user
+        a.btn.btn-default(href='/planets/edit/'+planet.id) Editar
+        a.btn.btn-atention.delete-planet(href='#',data-id=planet._id) Eliminar

@@ -1,0 +1,39 @@
+doctype html
+html
+    head
+        title OAuth 2
+        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet' href='/css/style.css')
+    body
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            a.navbar-brand(href='#') OAuth 2
+            ul.navbar-nav.mr-auto
+                li.nav-item.active
+                    a.nav-item.nav-link.active(href='/')
+                        | Planetas 
+                        span.sr-only (current)
+                if user
+                    li.nav-item
+                        a.nav-item.nav-link(href='/planets/add') Adicionar Planeta
+                    li.nav-item
+                        a.nav-item.nav-link(href='/profile') Profile
+                    li.nav-item
+                        a.nav-item.nav-link(href='/oauth2') Oauth2
+            ul.navbar-nav.ml-auto
+                if !user
+                    li.nav-item
+                        a.nav-item.nav-link(href='/users/register') Registo
+                    li.nav-item   
+                        a.nav-item.nav-link(href='/users/login') Login
+                else
+                    li.nav-item   
+                        a.nav-item.nav-link(href='/users/logout') Logout
+        .container
+            != messages('message', locals)
+            block content
+            br
+            footer.footer
+                p  Daniel Leandro - a21800566 - Sistemas de Gestão de Identidade - Universidade Lusófona
+        script(src='/bower_components/jquery/dist/jquery.js')
+        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+        script(src='/js/main.js')

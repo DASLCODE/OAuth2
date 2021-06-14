@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    h1 Profile
+    hr
+    if user.googleId
+        h5 ID: #{googleId}
+        hr
+    if user.facebookId
+        h5 ID: #{facebookId}
+        hr
+    if user.gitId
+        h5 ID: #{gitId}
+        hr
+    if user.username
+        h5 Username: #{username}
+        hr
+    if user.email
+        h5 E-mail: #{email}
+        hr
+    if user.company
+        h5 Empresa: #{company}
+        hr
+    if user.location
+        h5 Localização: #{location}
+        hr
+    if user.bio
+        h5 Descrição: #{bio}
+        hr
+    if user.thumbnail
+        img(src=thumbnail, width='40', height='40')
+        hr
+    

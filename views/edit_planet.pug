@@ -1,0 +1,16 @@
+extends layout
+
+block content     
+    h1 #{title}
+    form(method='POST', action='/planets/edit/'+planet._id)
+        #form-group
+            label Titulo:
+            input.form-control(name='title', type='text', value=planet.title)
+        #form-group
+            label Autor:
+            input.form-control(name='author', type='text', value=planet.author)
+        #form-group
+            label Descrição:
+            textarea.form-control(name='body')= planet.body
+        br
+        button.btn.btn-primary(type='submit') Editar

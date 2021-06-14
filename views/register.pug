@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div.centrar     
+        h1 Registo
+        form(method='POST', action='/users/register')
+            #form-group
+                label Nome:
+                input.form-control(name='name', type='text')
+            #form-group
+                label Email:
+                input.form-control(name='email', type='text')
+            #form-group
+                label Username:
+                input.form-control(name='username', type='text')
+            #form-group
+                label Password:
+                input.form-control(name='password', type='password')
+            #form-group
+                label Confirmar Password:
+                input.form-control(name='password2', type='password')
+            br
+            button.btn.btn-primary(type='submit') Registar

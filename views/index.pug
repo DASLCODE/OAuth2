@@ -1,0 +1,8 @@
+extends layout
+
+block content   
+    h1 #{title}
+    ul.list-group
+        each planet, i in planets
+            li.list-group-item
+                a(href="/planets/"+planet._id)= planet.title

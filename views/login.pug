@@ -1,0 +1,23 @@
+extends layout
+
+block content  
+    div.centrar
+        h1 Login
+        form(method='POST', action='/users/login')
+            #form-group
+                label Username:
+                input.form-control(name='username', type='text')
+            #form-group
+                label Password:
+                input.form-control(name='password', type='password')
+            br
+            button.btn.btn-primary(type='submit') Iniciar Sessão
+        a(href='/users/facebook')
+            button.loginBtn.loginBtn--facebook
+                | Login with Facebook   
+        a(href='/users/google')
+            button.loginBtn.loginBtn--google
+                | Login with Google
+        a(href='/users/github')       
+            button.loginBtn.loginBtn--github
+                | Login with Github
